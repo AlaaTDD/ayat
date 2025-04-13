@@ -56,9 +56,9 @@ AppBar appBarHome(BuildContext context, String name) {
           backgroundImage: AssetImage("assets/images/logoinside.png")),
     ),
     centerTitle: false,
-    actions: [
-      RiveMenuButton()
-    ],
+    // actions: [
+    //   RiveMenuButton()
+    // ],
     title: CustomText(
       name: name,
       fontWeight: FontWeight.bold,

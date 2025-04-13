@@ -38,7 +38,7 @@ dependencies:
   shared_preferences:
   fluttertoast:
   rive:
-  lottie:
+  # lottie:
   clipboard:
   quran: ^1.3.3
   flutter_circle_color_picker:
