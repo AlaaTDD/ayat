@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_circle_color_picker/flutter_circle_color_picker.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../data/bloc/aya/aya_cubit.dart';
 import '../resorces/color_app.dart';
 import 'custom_text.dart';

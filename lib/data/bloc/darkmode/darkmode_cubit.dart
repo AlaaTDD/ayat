@@ -13,11 +13,15 @@ class DarkmodeCubit extends Cubit<DarkmodeState> {
   static DarkmodeCubit get(context) => BlocProvider.of(context);
 
   Future<void> _loadTheme() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool isDarkMode = prefs.getBool('isDarkMode') ?? false;
-    emit(DarkmodeInitial(isDarkMode: isDarkMode));
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      bool isDarkMode = prefs.getBool('isDarkMode') ?? false;
+      emit(DarkmodeInitial(isDarkMode: isDarkMode));
+    } catch (e) {
+      print('SharedPreferences error: $e');
+      emit(DarkmodeInitial(isDarkMode: false));
+    }
   }
-
   Future<void> toggleTheme() async {
     if (state is DarkmodeInitial) {
       bool isDarkMode = !(state as DarkmodeInitial).isDarkMode;
