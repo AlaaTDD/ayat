@@ -20,7 +20,6 @@ AppBar appBarCustom(BuildContext context, String name) {
     ),
   );
 }
-
 AppBar appBarSurah(BuildContext context, String name) {
   return AppBar(
     leading: InkWell(
@@ -56,9 +55,9 @@ AppBar appBarHome(BuildContext context, String name) {
           backgroundImage: AssetImage("assets/images/logoinside.png")),
     ),
     centerTitle: false,
-    // actions: [
-    //   RiveMenuButton()
-    // ],
+    actions: [
+      RiveMenuButton()
+    ],
     title: CustomText(
       name: name,
       fontWeight: FontWeight.bold,

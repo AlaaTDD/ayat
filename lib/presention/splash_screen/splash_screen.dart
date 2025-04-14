@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-// import 'package:lottie/lottie.dart';
+import 'package:lottie/lottie.dart';
 import 'package:ayat/presention/customs/custom_text.dart';
 import '../resorces/routes_manager.dart';
 import '../resorces/string_manager.dart';
@@ -32,9 +32,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            // SizedBox(
-            //   height: 150,
-            //   child: Lottie.asset(AppStrings.logoPath,),),
+            SizedBox(
+              height: 150,
+              child: Lottie.asset(AppStrings.logoPath,),),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: CustomText(name: AppStrings.nameAppAyat,fontFa: "Cairo",alignmentGeometry: Alignment.center,color: Color(0xff747474), fontWeight: FontWeight.w900, font: 28),
