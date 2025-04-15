@@ -1,10 +1,13 @@
 import 'package:ayat/presention/resorces/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:ayat/presention/customs/rive_menu_button.dart';
+import '../resorces/size_app.dart';
 import 'custom_text.dart';
 
 AppBar appBarCustom(BuildContext context, String name) {
   return AppBar(
+    toolbarHeight: getResponsiveFontSize(context,iphoneSize: 60,ipadMediumSize: 80,ipadLargeSize: 80),
+
     leading: InkWell(
         onTap: () {
           Navigator.pop(context);
@@ -16,12 +19,14 @@ AppBar appBarCustom(BuildContext context, String name) {
     title: CustomText(
       name: name,
       fontWeight: FontWeight.bold,
-      font: 20,
+      font: getResponsiveFontSize(context,iphoneSize: 20,ipadMediumSize: 28,ipadLargeSize: 30),
     ),
   );
 }
 AppBar appBarSurah(BuildContext context, String name) {
   return AppBar(
+    toolbarHeight: getResponsiveFontSize(context,iphoneSize: 60,ipadMediumSize: 80,ipadLargeSize: 80),
+
     leading: InkWell(
         onTap: () {
           Navigator.pop(context);
@@ -42,7 +47,7 @@ AppBar appBarSurah(BuildContext context, String name) {
     title: CustomText(
       name: name,
       fontWeight: FontWeight.bold,
-      font: 20,
+      font: getResponsiveFontSize(context,iphoneSize: 20,ipadMediumSize: 28,ipadLargeSize: 30),
     ),
   );
 }
@@ -50,11 +55,12 @@ AppBar appBarHome(BuildContext context, String name) {
   return AppBar(
     leading: Center(
       child: CircleAvatar(
-         radius: 25,
+         radius: getResponsiveFontSize(context,iphoneSize: 25,ipadMediumSize: 30,ipadLargeSize: 35),
           backgroundColor: Colors.transparent,
           backgroundImage: AssetImage("assets/images/logoinside.png")),
     ),
     centerTitle: false,
+    toolbarHeight: getResponsiveFontSize(context,iphoneSize: 60,ipadMediumSize: 80,ipadLargeSize: 80),
     actions: [
       RiveMenuButton()
     ],
@@ -62,7 +68,7 @@ AppBar appBarHome(BuildContext context, String name) {
       name: name,
       fontWeight: FontWeight.bold,
       fontFa: "Cairo",
-      font: 20,
+      font: getResponsiveFontSize(context,iphoneSize: 20,ipadMediumSize: 28,ipadLargeSize: 30),
     ),
   );
 }

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/bloc/quarn/quarn_cubit.dart';
 import '../customs/mediaquery.dart';
 import '../resorces/color_app.dart';
+import '../resorces/size_app.dart';
 
 class AyaOfDay extends StatelessWidget {
   const AyaOfDay({super.key});
@@ -31,16 +32,15 @@ class AyaOfDay extends StatelessWidget {
                     Text(
                       "${QuarnCubit.get(context).surahName}",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: getResponsiveFontSize(context,iphoneSize: 20,ipadMediumSize: 30,ipadLargeSize: 40),
                       ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 5),
-
                     Text(
                       QuarnCubit.get(context).ayah,
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: getResponsiveFontSize(context,iphoneSize: 20,ipadMediumSize: 27,ipadLargeSize: 29),
 
                       ),
                       textAlign: TextAlign.center,

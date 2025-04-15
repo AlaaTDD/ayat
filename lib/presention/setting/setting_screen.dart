@@ -1,6 +1,7 @@
 import 'package:ayat/presention/customs/custom_drop_menu.dart';
 import 'package:ayat/presention/customs/custom_outlinebottom.dart';
 import 'package:ayat/presention/customs/custom_text.dart';
+import 'package:ayat/presention/customs/mediaquery.dart';
 import 'package:ayat/presention/resorces/size_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,25 +22,26 @@ class SettingScreen extends StatelessWidget {
           builder: (BuildContext context, state) {
             return Padding(
               padding:  EdgeInsets.all(SizeApp.padingapp),
-              child: SizedBox(
-                width: SizeApp.widthapp,
-                child: ListView(
-                  children: [
-                    CustomText(name: AppStrings.settingQuran,alignmentGeometry: Alignment.centerRight, fontWeight: FontWeight.w600, font: 16),
-                    const SizedBox(height: 20,),
-                    titleW(const CustomDropMenu(),AppStrings.fontQuran, Icons.font_download_outlined,context),
-                    titleW( Padding(
-                      padding: const EdgeInsets.only(right: 35.0),
-                      child: IconButton(onPressed: (){
-                      NeedBloc.showDialogColor(context);
-                      }, icon:const Icon(Icons.color_lens_outlined)),
-                    ),AppStrings.colorQuran, Icons.color_lens_outlined,context),
-                    CustomOutLineWithIcon(name: AppStrings.saveSetting, iconData: Icons.done_outline_rounded, onPressed: (){
+              child: ListView(
+                children: [
+                  CustomText(name: AppStrings.settingQuran,alignmentGeometry: Alignment.centerRight, fontWeight: FontWeight.w600,
+                      font: getResponsiveFontSize(context,iphoneSize: 16,ipadMediumSize: 18,ipadLargeSize: 20)
+                  ),
+                  const SizedBox(height: 20,),
+                  titleW(const CustomDropMenu(),AppStrings.fontQuran, Icons.font_download_outlined,context),
+                  titleW( Padding(
+                    padding: const EdgeInsets.only(right: 35.0),
+                    child: IconButton(onPressed: (){
+                    NeedBloc.showDialogColor(context);
+                    }, icon: Icon(Icons.color_lens_outlined,size: getResponsiveFontSize(context,iphoneSize: 20,ipadMediumSize: 25,ipadLargeSize: 30),)),
+                  ),AppStrings.colorQuran, Icons.color_lens_outlined,context),
+                  Center(
+                    child: CustomOutLineWithIcon(name: AppStrings.saveSetting, iconData: Icons.done_outline_rounded, onPressed: (){
                      AyaCubit.get(context).SaveEditQuran();
-                    }, color: Theme.of(context).primaryColor,colorr: Theme.of(context).shadowColor,),
+                    },width: getResponsiveFontSize(context,iphoneSize: 390,ipadMediumSize: 390,ipadLargeSize: 390) ,color: Theme.of(context).primaryColor,colorr: Theme.of(context).shadowColor,),
+                  ),
 
-                  ],
-                ),
+                ],
               ),
             );
           },
@@ -62,8 +64,10 @@ class SettingScreen extends StatelessWidget {
             width: 100,  // Adjust the width as needed
             child: widget,
           ),
-          title: CustomText(name: name,alignmentGeometry: Alignment.centerRight, fontWeight: FontWeight.w600, font: 14),
-          leading: Icon(icondata),
+          title: CustomText(name: name,alignmentGeometry: Alignment.centerRight, fontWeight: FontWeight.w600,
+              font: getResponsiveFontSize(context,iphoneSize: 16,ipadMediumSize: 18,ipadLargeSize: 20)),
+
+          leading: Icon(icondata,size: getResponsiveFontSize(context,iphoneSize: 20,ipadMediumSize: 25,ipadLargeSize: 30),),
         ),
       ),
     );

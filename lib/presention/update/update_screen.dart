@@ -20,10 +20,14 @@ class UpdateScreen extends StatelessWidget {
                 text: TextSpan(children: [
                   TextSpan(
                       text: " (${(index+1).toString()}) ",
-                      style: TextStyle(fontSize: 16,color: Theme.of(context).primaryColor)),
+                      style: TextStyle(
+                          fontSize: getResponsiveFontSize(context,iphoneSize: 16,ipadMediumSize: 20,ipadLargeSize: 22),
+                          color: Theme.of(context).primaryColor)),
               TextSpan(
                   text: "${updates[index]}\n",
-                  style: TextStyle(fontSize: 16,color: Theme.of(context).primaryColor)),
+                  style: TextStyle(
+                      fontSize: getResponsiveFontSize(context,iphoneSize: 16,ipadMediumSize: 20,ipadLargeSize: 22),
+                      color: Theme.of(context).primaryColor)),
             ]));
           },
         ),

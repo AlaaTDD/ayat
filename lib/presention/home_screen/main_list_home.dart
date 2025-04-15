@@ -3,6 +3,7 @@ import '../../models/model_list_grid.dart';
 import '../customs/custom_text.dart';
 import '../customs/scale_animation_item.dart';
 import '../resorces/routes_manager.dart';
+import '../resorces/size_app.dart';
 
 class MainListHome extends StatelessWidget {
   const MainListHome({super.key});
@@ -59,7 +60,7 @@ class MainListHome extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.all(getResponsiveFontSize(context,iphoneSize: 8,ipadMediumSize: 18,ipadLargeSize: 20),),
                       child: Image.asset(modelListGrid[index]["image"]),
                     )),
                     Container(
@@ -69,10 +70,10 @@ class MainListHome extends StatelessWidget {
                       ),
                       child: CustomText(
                           name: modelListGrid[index]["text"],
-                          height: 30,
+                          height: getResponsiveFontSize(context,iphoneSize: 30,ipadMediumSize: 50,ipadLargeSize: 60),
                           alignmentGeometry: Alignment.center,
                           fontWeight: FontWeight.w700,
-                          font: 12),
+                          font: getResponsiveFontSize(context,iphoneSize: 12,ipadMediumSize: 16,ipadLargeSize: 20),),
                     ),
                   ],
                 ),

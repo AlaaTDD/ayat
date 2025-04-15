@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
 import '../../data/bloc/darkmode/darkmode_cubit.dart';
+import '../resorces/size_app.dart';
 
 class RiveMenuButton extends StatefulWidget {
   final void Function(bool isOpen)? onToggle;
@@ -65,7 +66,7 @@ class _RiveMenuButtonState extends State<RiveMenuButton> {
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: SizedBox(
-            width: 60,
+            width: getResponsiveFontSize(context,iphoneSize: 60,ipadMediumSize: 80,ipadLargeSize: 80),
             height: 100,
             child: AnimatedOpacity(
               opacity: _isVisible ? 1.0 : 0.0,

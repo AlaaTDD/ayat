@@ -6,6 +6,7 @@ import 'package:ayat/presention/resorces/routes_manager.dart';
 import 'package:quran/quran.dart' as quran;
 
 import '../../models/model_surah.dart';
+import '../resorces/size_app.dart';
 
 class QuranScreen extends StatefulWidget {
   QuranScreen({Key? key}) : super(key: key);
@@ -66,18 +67,20 @@ class _QuranScreenState extends State<QuranScreen> {
                     Navigator.pushNamed(context, Routes.detailsRoute,arguments:chapter );
                     },
                     leading: Icon(Icons.bookmark),
-                    trailing: Text(quran.getVerseCount(surahIndex).toString()),
+                    trailing: Text(quran.getVerseCount(surahIndex).toString(),style: TextStyle(
+                      fontSize: getResponsiveFontSize(context,iphoneSize: 12,ipadMediumSize: 14,ipadLargeSize: 16)
+                    ),),
                     subtitle: CustomText(
                       name: quran.getSurahNameEnglish(surahIndex),
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.bold,
-                      font: 15,
+                      font:  getResponsiveFontSize(context,iphoneSize: 15,ipadMediumSize: 18,ipadLargeSize: 20)
                     ),
                     title: CustomText(
                       name: quran.getSurahNameArabic(surahIndex),
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.bold,
-                      font: 15,
+                        font:  getResponsiveFontSize(context,iphoneSize: 15,ipadMediumSize: 18,ipadLargeSize: 20)
                     ),
                   ),
                 );

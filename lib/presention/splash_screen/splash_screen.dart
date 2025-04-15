@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ayat/presention/customs/custom_text.dart';
 import '../resorces/routes_manager.dart';
+import '../resorces/size_app.dart';
 import '../resorces/string_manager.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -33,11 +34,18 @@ class _SplashScreenState extends State<SplashScreen> {
           shrinkWrap: true,
           children: [
             SizedBox(
-              height: 150,
+              height: getResponsiveFontSize(context,iphoneSize: 150,ipadMediumSize: 200,ipadLargeSize: 200),
               child: Lottie.asset(AppStrings.logoPath,),),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: CustomText(name: AppStrings.nameAppAyat,fontFa: "Cairo",alignmentGeometry: Alignment.center,color: Color(0xff747474), fontWeight: FontWeight.w900, font: 28),
+              child: CustomText(
+                  name: AppStrings.nameAppAyat,
+                  fontFa: "Cairo",
+                  alignmentGeometry: Alignment.center,
+                  color: Color(0xff747474),
+                  fontWeight: FontWeight.w900,
+                  font: getResponsiveFontSize(context,iphoneSize: 28,ipadMediumSize: 32,ipadLargeSize: 32),
+              ),
             ),
           ],
         ),

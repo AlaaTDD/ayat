@@ -4,6 +4,7 @@ import '../../data/bloc/quarn/quarn_cubit.dart';
 import '../customs/appbar_custom.dart';
 import '../customs/custom_text.dart';
 import '../resorces/color_app.dart';
+import '../resorces/size_app.dart';
 
 class Bookmark extends StatelessWidget {
   const Bookmark({super.key});
@@ -27,7 +28,7 @@ class Bookmark extends StatelessWidget {
                       CustomText(
                         name: nameAYA,
                         fontWeight: FontWeight.w300,
-                        font: 13,
+                        font: getResponsiveFontSize(context,iphoneSize: 13,ipadMediumSize: 16,ipadLargeSize: 18) ,
                         alignmentGeometry: Alignment.center,
                         maxLines: 16,
                       ),
@@ -35,7 +36,7 @@ class Bookmark extends StatelessWidget {
                       CustomText(
                         name: nameAYA.split('\n\n')[0],
                         fontWeight: FontWeight.bold,
-                        font: 22,
+                        font: getResponsiveFontSize(context,iphoneSize: 18,ipadMediumSize: 22,ipadLargeSize: 24) ,
                         fontFa: "",
                         alignmentGeometry: Alignment.center,
                         maxLines: 16,
@@ -45,7 +46,7 @@ class Bookmark extends StatelessWidget {
                         name: nameAYA.split('\n\n')[1],
                         textAlign: TextAlign.center,
                         fontWeight: FontWeight.bold,
-                        font: 18,
+                        font: getResponsiveFontSize(context,iphoneSize: 18,ipadMediumSize: 22,ipadLargeSize: 24) ,
                         fontFa: "",
                         alignmentGeometry: Alignment.center,
                         maxLines: 16,
@@ -54,7 +55,7 @@ class Bookmark extends StatelessWidget {
                       CustomText(
                         name: nameAYA,
                         fontWeight: FontWeight.bold,
-                        font: 18,
+                        font: getResponsiveFontSize(context,iphoneSize: 18,ipadMediumSize: 22,ipadLargeSize: 24) ,
                         fontFa: "",
                         alignmentGeometry: Alignment.center,
                         maxLines: 16,

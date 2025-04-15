@@ -3,6 +3,7 @@ import '../../models/azkar.dart';
 import '../customs/appbar_custom.dart';
 import '../customs/custom_text.dart';
 import '../resorces/color_app.dart';
+import '../resorces/size_app.dart';
 
 class AzarMasa extends StatelessWidget {
   const AzarMasa({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class AzarMasa extends StatelessWidget {
                       name: item['zekr'],
                       fontWeight: FontWeight.bold,
                       textAlign: TextAlign.center,
-                      font: 16,
+                      font: getResponsiveFontSize(context,iphoneSize: 16,ipadMediumSize: 18,ipadLargeSize: 20),
                       maxLines: 16,
                     ),
                     Divider(),
@@ -38,14 +39,15 @@ class AzarMasa extends StatelessWidget {
                         name: item['bless'],
                         fontWeight: FontWeight.w400,
                         textAlign: TextAlign.center,
-                        font: 12,
+                        font: getResponsiveFontSize(context,iphoneSize: 12,ipadMediumSize: 14,ipadLargeSize: 16),
                         maxLines: 16,
+
                       ),
                     CustomText(
                       name: "التكرار (${item['repeat'].toString()})",
                       fontWeight: FontWeight.w400,
                       textAlign: TextAlign.center,
-                      font: 12,
+                      font: getResponsiveFontSize(context,iphoneSize: 12,ipadMediumSize: 14,ipadLargeSize: 16),
                       maxLines: 16,
                     ),
                   ],

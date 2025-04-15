@@ -14,7 +14,6 @@ class InfoScreen extends StatelessWidget {
         padding:  EdgeInsets.all(SizeApp.padingapp),
         child: Center(
           child: SizedBox(
-            width: SizeApp.widthapp,
             child: ListView.builder(
               itemCount: infos.length,
               itemBuilder: (BuildContext context, int index) {
@@ -29,10 +28,10 @@ class InfoScreen extends StatelessWidget {
                           text: TextSpan(children: [
                             TextSpan(
                                 text: " (${(index+1).toString()}) ",
-                                style: TextStyle(fontSize: 16, color: Theme.of(context).primaryColor)),
+                                style: TextStyle(fontSize: getResponsiveFontSize(context,iphoneSize: 16,ipadMediumSize: 22,ipadLargeSize: 25) , color: Theme.of(context).primaryColor)),
                             TextSpan(
                                 text: "${infos[index]["text"]}\n",
-                                style: TextStyle(fontSize: 16,color: Theme.of(context).primaryColor)),
+                                style: TextStyle(fontSize: getResponsiveFontSize(context,iphoneSize: 16,ipadMediumSize: 22,ipadLargeSize: 25) ,color: Theme.of(context).primaryColor)),
                           ])),
                       infos[index]["image"]=="NA"?Container():   Container(
                        clipBehavior: Clip.antiAliasWithSaveLayer,

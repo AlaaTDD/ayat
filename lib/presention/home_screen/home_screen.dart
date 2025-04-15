@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         extendBody: true,
+        
         appBar: appBarHome(context, AppStrings.nameAppAyat),
         body: ListView(
           children: [

@@ -5,6 +5,7 @@ import 'package:ayat/presention/customs/mediaquery.dart';
 import 'package:rive/rive.dart' as rive;
 import '../customs/appbar_custom.dart';
 import '../customs/custom_text.dart';
+import '../resorces/size_app.dart';
 
 
 class SphaScreen extends StatefulWidget {
@@ -33,27 +34,52 @@ class _SphaScreenState extends State<SphaScreen> {
                   child: Image.asset("assets/images/spha.png", color: Colors.white),
                 ),
               ),
-              body: Stack(
-                children: [
-                  Center(
-                    child: SphaCubit.get(context).artboardf != null
-                        ? rive.Rive(
-                      artboard: SphaCubit.get(context).artboardf!,
-                      fit: BoxFit.contain,
-                    )
-                        : Container(),
-                  ),
-                  SizedBox(
-                    width: width(context),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CustomText(name: text(SphaCubit.get(context).i), fontWeight: FontWeight.w900, font: 30),
-                        CustomText(name: SphaCubit.get(context).i.toString(), fontWeight: FontWeight.w900, font: 25),
-                      ],
+              body: Center(
+                child: Stack(
+                  children: [
+
+                    Center(
+                      child: SphaCubit.get(context).artboardf != null
+                          ? rive.Rive(
+                        artboard: SphaCubit.get(context).artboardf!,
+                        fit: BoxFit.fill,
+                      )
+                          : Container(),
                     ),
-                  ),
-                ],
+                    // Positioned(
+                    //   left: 0,
+                    //   child: Container(
+                    //     height: height(context),
+                    //     width: 150,
+                    //     color: Theme.of(context).scaffoldBackgroundColor,
+                    //   ),
+                    // ),
+                    // Positioned(
+                    //   right: 0,
+                    //   child: Container(
+                    //     height: height(context),
+                    //     width: 150,
+                    //     color: Theme.of(context).scaffoldBackgroundColor,
+                    //   ),
+                    // ),
+                    SizedBox(
+                      width: width(context),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CustomText(name: text(SphaCubit.get(context).i),
+                            fontWeight: FontWeight.w900,
+                            font:getResponsiveFontSize(context,iphoneSize: 30,ipadMediumSize: 35,ipadLargeSize: 40),
+                          ),
+                          CustomText(name: SphaCubit.get(context).i.toString(),
+                              fontWeight: FontWeight.w900,
+                            font:getResponsiveFontSize(context,iphoneSize: 25,ipadMediumSize: 30,ipadLargeSize: 35),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           },

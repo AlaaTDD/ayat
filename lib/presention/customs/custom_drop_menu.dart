@@ -3,6 +3,8 @@ import 'package:ayat/presention/customs/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../resorces/size_app.dart';
+
 class CustomDropMenu extends StatelessWidget {
   const CustomDropMenu({super.key});
   @override
@@ -14,7 +16,7 @@ class CustomDropMenu extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerLeft,
             child: SizedBox(
-              width: 55,
+              width: getResponsiveFontSize(context,iphoneSize: 55,ipadMediumSize: 65,ipadLargeSize: 75),
               height: 50,
               child: DropdownButton<double>(
                 value:
@@ -24,8 +26,9 @@ class CustomDropMenu extends StatelessWidget {
                   Icons.arrow_drop_down,
                   color: Theme.of(context).colorScheme.secondary,
                 ),
-                iconSize: 24,
+                iconSize: getResponsiveFontSize(context,iphoneSize: 24,ipadMediumSize: 30,ipadLargeSize: 35),
                 elevation: 16,
+
                 style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                 underline: Container(
                   height: 2,
@@ -42,7 +45,7 @@ class CustomDropMenu extends StatelessWidget {
                     child: CustomText(
                       name: value.toString(),
                       fontWeight: FontWeight.w600,
-                      font: 12,
+                      font: getResponsiveFontSize(context,iphoneSize: 12,ipadMediumSize: 14,ipadLargeSize: 16),
                       color: Theme.of(context).colorScheme.secondary,
                     ),
                   );
